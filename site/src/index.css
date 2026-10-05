@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Obsidian Editorial Dark Theme (Inspired by ppm-notes)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0b0d;        /* Deep Obsidian dark, warm background */
+  --bg-sidebar: #0d0e12;
+  --bg-card: transparent;       /* Transparent reader view (no box clutter) */
+  --border-color: rgba(255, 255, 255, 0.05); /* Extremely subtle dividing lines */
+  --text-primary: #d1d5db;      /* Highly readable soft gray text */
+  --text-bold: #ffffff;         /* Pure white for headings/questions */
+  --text-muted: #6b7280;        /* Quiet slate for metadata */
+  
+  /* Muted Gold Accent System */
+  --accent-color: #d4af37;      /* Warm premium gold bookmark accent */
+  --accent-soft: rgba(212, 175, 55, 0.08);
+  --accent-border: rgba(212, 175, 55, 0.25);
+  
+  /* Fonts */
+  --font-editorial: 'Lora', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Spacings */
+  --sidebar-width: 290px;
+  --header-height: 56px;
+  --max-reading-width: 720px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: -0.1px;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Reader Typography */
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans-reader {
+  font-family: var(--font-sans);
+}
+
+/* Custom Memorize Box with Gold Left Accent Border */
+.memorize-box {
+  background-color: rgba(212, 175, 55, 0.03);
+  border-left: 2px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+  padding: 1.1rem 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.memorize-title {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.4rem;
+}
+
+/* Custom Minimalist Editorial Tables */
+.custom-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+table.custom-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+table.custom-table th {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 1rem 0.85rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  color: #fff;
+}
+
+table.custom-table td {
+  padding: 1rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  vertical-align: top;
+  color: var(--text-primary);
+}
+
+table.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Mobile Scrollbar Removal */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
